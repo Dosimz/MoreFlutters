@@ -2,7 +2,7 @@
 
 > 以下内容来自  https://flutter.dev/docs/development/ui/widgets-intro
 
-![basicWidget](/Users/yuyi/AndroidStudioProjects/FlutterDocsWeLearn/introductionTowidget/widgetset/outimages/basicWidget.jpeg)
+![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/basicWidget.jpeg)
 
 ```Dart
 import 'package:flutter/material.dart';
