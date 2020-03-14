@@ -1,4 +1,4 @@
-##### 这个仓库用来存储每天抽空在 Flutter 官网的实际，以便后面自己查阅。
+#### 这个仓库用来存储每天抽空在 Flutter 官网的实践，以便后面自己查阅。
 
 > 以下内容来自  https://flutter.dev/docs/development/ui/widgets-intro
 
