@@ -2,6 +2,53 @@
 
 > 以下内容来自  https://flutter.dev/docs/development/ui/widgets-intro
 
+
+### Day Three
+
+![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/GestureDetector.jpeg)
+
+在 Day Two 内容里加入 MyButton
+```dart
+...
+		actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+          MyButton(),
+        ],
+...
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print('MyButton was tapped!');
+      },
+      child: Container(
+        height: 36.0,
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
+          color: Colors.lightGreen[500],
+        ),
+        child: Center(
+          child: Text('Engage'),
+        ),
+      ),
+    );
+  }
+}
+
+```
+>The GestureDetector widget doesn’t have a visual representation but instead detects gestures made by the user. When the user taps the Container, the GestureDetector calls its onTap() callback, in this case printing a message to the console. You can use GestureDetector to detect a variety of input gestures, including taps, drags, and scales.
+
+>Many widgets use a GestureDetector to provide optional callbacks for other widgets. For example, the IconButton, RaisedButton, and FloatingActionButton widgets have onPressed() callbacks that are triggered when the user taps the widget.
+
+
 ### Day Two
 
 ![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/MaterialApp.jpeg)
