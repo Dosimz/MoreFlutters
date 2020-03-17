@@ -3,6 +3,68 @@
 > 以下内容来自  https://flutter.dev/docs/development/ui/widgets-intro
 
 
+### Day Five
+
+![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/statelessinvolestatefull.jpeg)
+
+改变 Couter Widget 里的 button 和显示数字的 widget 为自定义的 widget
+```dart
+
+class CounterDisplay extends StatelessWidget {
+  CounterDisplay({this.count});
+
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Count: $count');
+  }
+}
+
+class CounterIncrementor extends StatelessWidget {
+  CounterIncrementor({this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: onPressed,
+      child: Text('Increment'),
+    );
+  }
+}
+
+class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _counter = 0;
+
+  void _increment() {
+    setState(() {
+      ++_counter;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: <Widget>[
+      CounterIncrementor(onPressed: _increment),
+      CounterDisplay(count: _counter),
+    ]);
+  }
+}
+
+```
+>The example above accepts user input and directly uses the result in its build() method. In more complex applications, different parts of the widget hierarchy might be responsible for different concerns; for example, one widget might present a complex user interface with the goal of gathering specific information, such as a date or location, while another widget might use that information to change the overall presentation.
+
+>In Flutter, change notifications flow “up” the widget hierarchy by way of callbacks, while current state flows “down” to the stateless widgets that do presentation. The common parent that redirects this flow is the State. The following slightly more complex example shows how this works in practice:
+
+
+
 ### Day Four
 
 ![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/statefullWidget1.jpeg)
