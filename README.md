@@ -3,6 +3,59 @@
 > 以下内容来自  https://flutter.dev/docs/development/ui/widgets-intro
 
 
+### Day Seven
+
+![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/non-materialApp.jpeg)
+
+
+##### Material App
+
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter layout demo'),
+        ),
+        body: Center(
+          child: Text('Hello World'),
+        ),
+      ),
+    );
+  }
+}
+```
+> For a Material app, you can use a Scaffold widget; it provides a default banner, background color, and has API for adding drawers, snack bars, and bottom sheets. Then you can add the Center widget directly to the body property for the home page.
+
+##### Non-Material App
+
+> For a non-Material app, you can add the Center widget to the app’s build() method:
+
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Center(
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 32,
+            color: Colors.black87,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+> By default a non-Material app doesn’t include an AppBar, title, or background color. If you want these features in a non-Material app, you have to build them yourself. This app changes the background color to white and the text to dark grey to mimic a Material app.
+
 ### Day Six
 
 ![basicWidget](https://github.com/Dosimz/MoreFlutters/blob/master/introductionTowidget/widgetset/outimages/shoplistApp.jpeg)
